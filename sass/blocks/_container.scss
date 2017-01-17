@@ -1,6 +1,6 @@
 .container{
 	padding: 20px;
-	@include br1{
+	@include break1{
 		max-width: 1064px;
 		margin: 0 auto;
 		padding: 223px 20px 15px 20px;

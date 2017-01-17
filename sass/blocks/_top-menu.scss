@@ -2,7 +2,7 @@
 	position: absolute;
 	top: 0;
 	right: 0;
-	@include br1{
+	@include break1{
 		position: static;
 		overflow: hidden;
 	}
@@ -17,7 +17,7 @@
 		&__on{
 			display: block;
 		}
-		@include br1{
+		@include break1{
     	display: block;
     	padding: 0;
     	position: static;
@@ -38,7 +38,7 @@
 		&:first-child{
 			border: none;
 		}
-		@include br1{
+		@include break1{
 			display: inline-block;
 			height: 66px;
 			padding: 25px 30px 0;
@@ -56,25 +56,28 @@
 		height: 60px;
 		width: 70px;
 		padding: 26px 0 0 20px;
-		position: absolute;  
+		position: absolute;
     top: 0;
     right: 0;
     cursor: pointer;
     &__on{
     	background-color: #2a2a2a;
     }
-    @include br1{
+    @include break1{
     	display: none;
     }
 	}
 	&_lines{
     display: block;
     width: 30px;
-    height: 5px; 
+    height: 5px;
     background-color: #fff;
     position: relative;
     .top-menu_toggle__on &{
     	background-color: transparent;
+    	@include old-ie{
+				background-color: #fff;
+    	}
     }
     &:before{
 	    content: "";

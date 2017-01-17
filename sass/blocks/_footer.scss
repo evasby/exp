@@ -2,7 +2,7 @@
 	padding: 12px 0 45px;
 	background-color: #0e0e0f;
 	text-align: center;
-	@include br1{
+	@include break1{
 		padding: 0;
 	}
 	&_logo{
@@ -15,8 +15,13 @@
 		text-indent: 100%;
 		white-space: nowrap;
 		overflow: hidden;
-		@include br1{
+		@include break1{
 			display: none;
+		}
+		@include old-ie{
+			background: none; 
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/footer-logo.png', sizingMethod='scale');
+			-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/footer-logo.png', sizingMethod='scale')";
 		}
 	}
 	&_text{
@@ -25,7 +30,7 @@
 	  font-size: 16px;  
 	  line-height: 25px;
 	  color: #787878;
-	  @include br1{
+	  @include break1{
 			display: none;
 		}
 	}

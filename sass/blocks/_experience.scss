@@ -1,5 +1,46 @@
 .experience{
-	max-width: 700px;
-	height: 500px;
-	background-color: #666;
+	padding: 20px;
+	@include break1{
+		padding: 35px 20px 95px;
+		max-width: 700px;
+	}
+	&_list{	
+		@include break2{
+			@include clearfix;
+		}
+	}
+	&_item{
+		margin: 0 0 70px;
+		text-align: center;
+		@include break2{
+			float: left;
+			width: 50%;
+		}
+		@include break1{
+			margin: 0 0 114px;
+			float: left;
+			width: 33.33%;
+		}
+	}
+	&_wrap{
+		width: 100%;
+		max-width: 309px;
+		margin: 0 auto 10px auto;
+		@include break1{
+			max-width: 180px;
+			margin: 0 auto 20px auto;
+		}
+	}
+	&_image{
+		display: block;
+		width: 100%;
+		height: auto;		
+	}
+	&_name{
+		color: #b9b9b9;
+		font-size: 26px;
+		@include break1{
+			font-size: 21px;
+		}
+	}
 }

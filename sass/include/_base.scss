@@ -6,7 +6,7 @@ body{
 	background-color: #1c1c1e;
 	font-family: Arial, Helvetica, sans-serif;
   color: #fff;
-	@include br1{
+	@include break1{
 		background: #1c1c1e url('../images/page_background.jpg') 50% -37px no-repeat;
 	}
 }

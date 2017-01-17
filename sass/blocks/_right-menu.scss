@@ -1,13 +1,13 @@
 .right-menu{
 	display: none;
-	@include br1{
+	@include break1{
 		display: block;
 		float: right;
 		width: 244px;
 		padding: 0 0 10px;
 		background-color: #101010;
 		border: 1px solid #000;
-		background: rgba(60,61,64,1);
+		background: rgba(15,15,15,1);
 		background: linear-gradient(135deg, rgba(60,61,64,1) 0%, rgba(64,65,66,1) 7%, rgba(28,28,28,1) 14%, rgba(30,30,30,1) 21%, rgba(15,15,15,1) 36%, rgba(15,15,15,1) 100%);
 		&_title{
 			margin: 20px 0 18px 17px;

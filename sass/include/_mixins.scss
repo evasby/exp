@@ -4,11 +4,11 @@
   }
 }
 //*********************************************************************************/
-@mixin br1 {
-  @media all and (min-width: 768px) { @content; }
+@mixin break1 {
+  @media all and (min-width: 1000px) { @content; }
 }
-@mixin br2 {
-  @media all and (min-width: 960px) { @content; }
+@mixin break2 {
+  @media all and (min-width: 800px) { @content; }
 }
 //*********************************************************************************/
 @mixin link($normal, $hover){

@@ -8,8 +8,13 @@
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
-	@include br1{
+	@include break1{
 		float: left;
 		margin: 5px 0 0 5px;
+	}
+	@include old-ie{
+		background: none; 
+		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/site-logo.png', sizingMethod='scale');
+		-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/site-logo.png', sizingMethod='scale')";
 	}
 }
