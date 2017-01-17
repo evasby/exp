@@ -1,0 +1,32 @@
+.footer{
+	padding: 12px 0 45px;
+	background-color: #0e0e0f;
+	text-align: center;
+	@include br1{
+		padding: 0;
+	}
+	&_logo{
+		display: block;
+		width: 130px;
+		height: 70px;
+		margin: 0 auto;
+		background: transparent url('../images/footer-logo.png') 50% 50% no-repeat;
+		background-size: 100%;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		@include br1{
+			display: none;
+		}
+	}
+	&_text{
+		display: inline-block;
+		padding-top: 47px;
+	  font-size: 16px;  
+	  line-height: 25px;
+	  color: #787878;
+	  @include br1{
+			display: none;
+		}
+	}
+}

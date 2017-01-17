@@ -1,0 +1,15 @@
+.logo{
+	display: block;
+	height: 54px;
+	width: 54px;
+	margin: 0 0 0 5px;
+	background: transparent url('../images/site-logo.png') 50% 50% no-repeat;
+	background-size: 100%;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	@include br1{
+		float: left;
+		margin: 5px 0 0 5px;
+	}
+}

@@ -1,0 +1,60 @@
+@mixin old-ie {
+  @if $old-ie {
+    @content;
+  }
+}
+//*********************************************************************************/
+@mixin br1 {
+  @media all and (min-width: 768px) { @content; }
+}
+@mixin br2 {
+  @media all and (min-width: 960px) { @content; }
+}
+//*********************************************************************************/
+@mixin link($normal, $hover){
+  color:$normal;
+    &:link{color:$normal;};
+    &:visited{color:$normal;};
+    &:active{color:$normal;};
+    &:hover{color:$hover;}; 
+}
+//*********************************************************************************/
+@mixin clearfix{
+  &:before,
+  &:after{
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after{
+    clear: both;
+  }
+  @include old-ie{
+    *zoom: 1;
+  }
+}
+//*********************************************************************************/
+@mixin before{
+  @include old-ie{
+    *zoom: expression(
+    this.runtimeStyle.zoom="1",
+    this.appendChild( document.createElement("small") ).className="before"
+    );
+    .before{
+      @content;
+    }
+  }
+}
+@mixin after{
+  @include old-ie{
+    zoom: expression(
+    this.runtimeStyle.zoom="1",
+    this.appendChild( document.createElement("small") ).className="after"
+    );
+    .after{
+      @content;
+    }
+  }
+}
+//*********************************************************************************/
