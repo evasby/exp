@@ -1,0 +1,104 @@
+.components{
+	text-align: left;
+	margin: 0 0 26px;
+	&_title{
+		padding: 15px 0 12px 12px;
+		font-weight: bold;
+		color: #a29b70;
+		font-size: 19px;
+		@include break1{
+			font-size: 21px;
+		}
+	}
+	&_list{
+		@include clearfix;
+		padding: 0 0 3px;
+		margin: 0 3px;
+		border-bottom: 1px solid #a3a4a6;
+		@include break1{
+			border: none;
+		}
+	}
+	&_item{
+		float: left;
+		width: 33.33%;
+		border-left: 1px solid #a3a4a6;
+		padding: 0 0 3px;
+		text-align: center;
+		&:first-child{
+			border: none;
+		}
+		@include break1{
+			border: none;
+			float: none;
+			width: auto;
+			text-align: left;
+		}
+	}
+
+	//Styling radio button label
+	&_radio{
+		&:not(checked){
+			position: absolute;
+  		opacity: 0;
+  		@include break1{
+  			position: static;
+  			opacity: 1;
+  		}
+		}
+	}
+	&_label{
+		display: inline-block;
+		padding: 30px 0 0;
+		position: relative;
+		cursor: pointer;
+		font-size: 12px;
+		color: #c6c6c6;
+		transition: color 0.2s;
+		@include break1{
+			padding: 0;
+		}
+		.components_radio:not(checked) + &:before{
+			content: '';
+		  position: absolute;
+		  top: 4px;
+		  left: 50%;
+		  margin-left: -12px;
+		  width: 22px;
+		  height: 22px;
+		  border-radius: 50%;
+		  background: #dedede;
+		  @include break1{
+		  	display: none;
+		  }
+		}
+		.components_radio:not(checked) + &:after{
+			content: '';
+		  position: absolute;
+		  top: 8px;
+		  left: 50%;
+		  margin-left: -8px;
+		  width: 14px;
+		  height: 14px;
+		  border-radius: 50%;
+		  background: #f9a936;
+		  opacity: 0;
+		  transition: opacity 0.2s;
+		  @include break1{
+		  	display: none;
+		  }
+		}
+		.components_radio:checked + &{
+			color: #f9a936;
+			@include break1{
+				color: #c6c6c6;
+			}
+		}
+		.components_radio:checked + &:after{
+			opacity: 1;
+		}
+		@include old-ie{
+			padding: 0;
+		}
+	}
+}

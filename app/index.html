@@ -89,8 +89,8 @@
 			</ul>
 		</aside>
 		<article class="article">
-			<h1>Опыт танков</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a arcu faucibus, ultricies elit ac, viverra metus. Aliquam molestie felis id consequat convallis. Donec sed nulla consectetur, ultricies sem ac, varius erat. Pellentesque vitae erat ut felis lacinia rhoncus eu in est.</p>
+			<h1 class="article_title">Опыт танков</h1>
+			<p class="article_paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a arcu faucibus, ultricies elit ac, viverra metus. Aliquam molestie felis id consequat convallis. Donec sed nulla consectetur, ultricies sem ac, varius erat. Pellentesque vitae erat ut felis lacinia rhoncus eu in est.</p>
 			<div class="experience">
 				<ul class="experience_list">
 					<li class="experience_item">
@@ -98,6 +98,40 @@
 							<img src="images/tank.png" alt="" class="experience_image">
 						</div>
 						<span class="experience_name">T-34</span>
+						<div class="calculator">
+							<div class="components">
+								<div class="components_title">Комплектация</div>
+								<ul class="components_list">
+									<li class="components_item">
+										<input id="t1c1" class="components_radio" type="radio" name="gender" value="male" checked>
+										<label for="t1c1" class="components_label">Стандартная</label>
+									</li>
+									<li class="components_item">
+									  <input id="t1c2" class="components_radio" type="radio" name="gender" value="female">
+									  <label for="t1c2" class="components_label">Элитная</label>
+								  </li>
+								  <li class="components_item">
+									  <input id="t1c3" class="components_radio" type="radio" name="gender" value="other">
+									  <label for="t1c3" class="components_label">Премиумная</label>
+								  </li>
+							  </ul>
+							</div>
+							<div class="quantity">
+								<div class="quantity_title">Количество боев</div>
+								<div class="quantity_wrap">		
+									<div class="quantity_right">
+										<input class="quantity_text" type="text" value="1">
+									</div>
+									<div class="quantity_left">
+										<div class="quantity_slider"></div>
+									</div>
+								</div>
+							</div>
+							<div class="total">
+								<div class="total_title">Опыт танка</div>
+								<span class="total_text">360</span>
+							</div>
+						</div>
 					</li>
 					<li class="experience_item">
 						<div class="experience_wrap">
@@ -179,6 +213,7 @@
 	</footer>
 	<script src="js/jquery-1.12.4.js"></script>
 	<script src="js/jquery-ui.js"></script>
+	<script src="js/jquery.ui.touch-punch.js"></script>
 	<script src="js/main.js"></script>
 	<!--[if lt IE 9]>
   	<script type='text/javascript' src="js/respond.js"></script>	

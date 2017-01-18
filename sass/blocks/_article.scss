@@ -5,20 +5,30 @@
 		padding: 0 80px 0 0;
 		overflow: hidden;
 	}
-	h1{
-		margin: 0 0 18px;
-	  font-size: 24px;
+	&_title{
+		margin: 0 0 15px;
+		padding: 0 20px;
+	  font-size: 23px;
+	  @include break2{
+	  	font-size: 26px;
+	  }
 	  @include break1{
-	  	margin: 0 0 41px;
+	  	margin: 0 0 42px;
+	  	padding: 0;
 	  	font-size: 35px;
 	  }
 	}
-	p{
+	&_paragraph{
 		margin: 0 0 15px;
-	  font-size: 13px;
-	  line-height: 18px;
-	  @include break1{
+		padding: 0 20px;
+	  font-size: 12px;
+	  line-height: 14px;
+	  @include break2{
 	  	font-size: 15px;
+	  	line-height: 18px;
+	  }
+	  @include break1{
+	  	padding: 0;
 	  }
 	}
 }

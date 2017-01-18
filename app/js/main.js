@@ -11,4 +11,24 @@ $(document).ready(function(){
     }
   });
 
+
+
+  $(".quantity_slider").slider({
+    range: "min",
+    max: 255,
+    value: 100,
+    create: function() {
+      $(".quantity_text").val($(this).slider( "value" ));
+    },
+    slide: function(event, ui) {
+      $(".quantity_text").val(ui.value);
+    },
+    classes: {
+      'ui-slider': '',
+      'ui-slider-handle': '',
+      'ui-slider-range': ''
+    }
+  });
+
+
 });

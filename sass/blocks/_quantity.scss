@@ -1,0 +1,86 @@
+.quantity{
+	text-align: left;
+	margin: 0 0 24px;
+	&_title{
+		padding: 15px 0 13px 12px;
+		font-weight: bold;
+		color: #a29b70;
+		font-size: 19px;
+		@include break1{
+			font-size: 21px;
+		}
+	}
+	&_wrap{
+		@include clearfix;
+		padding: 0 12px;
+	}	
+	&_left{
+		max-width: 260px;
+		overflow: hidden;
+		background: transparent url('../images/quantity-bac.png') left top no-repeat;
+		background-size: 100% 100%;
+		padding: 0 20px 0 15px;
+		@include old-ie{
+			background: none; 
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-bac.png', sizingMethod='scale');
+			-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-bac.png', sizingMethod='scale')";
+		}
+	}
+	&_right{
+		float: right;
+		width: 79px;
+		margin: 0 0 0 14px;
+	}
+	&_slider{
+		&.ui-widget.ui-widget-content{
+			border: none;
+		}
+		&.ui-slider-horizontal{
+			height: 34px;
+		}
+		&.ui-widget-content{
+			background: none;
+		}
+		.ui-slider-handle{
+			cursor: pointer;
+			top: 3px;
+			width: 27px;
+			height: 27px;
+			border: none;
+			background: transparent url('../images/quantity-handle.png') left top no-repeat;
+			background-size: contain;
+			&:focus{
+				outline: none;
+			}
+			@include old-ie{
+				background: none; 
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-handle.png', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-handle.png', sizingMethod='scale')";
+			}
+		}
+		&.ui-slider-horizontal .ui-slider-range{
+			top: 16px;
+			height: 3px;
+			background-color: #ffd703;
+		}
+	}
+	&_text{
+		display: block;
+		height: 34px;
+		width: 100%;
+		padding: 0 15px 0 0;
+		border: none;
+		background: transparent url('../images/quantity-text.png') left top no-repeat;
+		background-size: 100% 100%;
+		color: #a29b70;
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 42px;
+		text-align: right;
+		@include old-ie{
+			background: none; 
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-text.png', sizingMethod='scale');
+			-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-text.png', sizingMethod='scale')";
+		}
+	}
+}

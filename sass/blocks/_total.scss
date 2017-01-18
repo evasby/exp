@@ -1,0 +1,39 @@
+.total{
+	text-align: left;
+	&_title{
+		padding: 15px 0 9px 12px;
+		font-weight: bold;
+		color: #a29b70;
+		font-size: 19px;
+		@include break1{
+			font-size: 21px;
+		}
+	}
+	&_text{
+		display: block;
+		padding: 6px 0 0 95px;
+		position: relative;
+		font-size: 40px;
+		font-weight: bold;
+		color: #f9a936;
+		&:before{
+			content: '';
+			display: block;
+			position: absolute;
+			top: 3px;
+			left: 21px;
+			width: 43px;
+			height: 43px;
+			background: transparent url('../images/total-star.png') left top no-repeat;
+			background-size: contain;
+			@include old-ie{
+				background-image: url('../images/total-star-small.png');
+			}
+		}
+	}
+	@include break1{
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
