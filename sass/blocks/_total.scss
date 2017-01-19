@@ -1,11 +1,13 @@
 .total{
 	text-align: left;
+	padding: 0 0 15px;
 	&_title{
 		padding: 15px 0 9px 12px;
 		font-weight: bold;
 		color: #a29b70;
 		font-size: 19px;
 		@include break1{
+			padding: 21px 0 19px 12px;
 			font-size: 21px;
 		}
 	}
@@ -29,11 +31,19 @@
 			@include old-ie{
 				background-image: url('../images/total-star-small.png');
 			}
+			@include break1{
+				top: 2px;
+				left: 6px;
+			}
+		}
+		@include break1{
+			padding: 6px 0 0 89px;
+			font-size: 42px;
 		}
 	}
 	@include break1{
 		position: absolute;
-		right: 0;
+		right: 35px;
 		top: 0;
 	}
 }

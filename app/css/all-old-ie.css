@@ -1328,14 +1328,16 @@ a.ui-button:active,
   padding: 20px 0; }
   @media all and (min-width: 600px) {
     .experience {
+      min-height: 570px;
       padding: 20px; } }
   @media all and (min-width: 1000px) {
     .experience {
-      padding: 35px 10px 95px;
+      padding: 0 10px 95px;
       max-width: 700px; } }
   @media all and (min-width: 600px) {
     .experience_list {
-      *zoom: 1; }
+      *zoom: 1;
+      margin: -22px 0 0; }
       .experience_list:before, .experience_list:after {
         content: ".";
         display: block;
@@ -1344,7 +1346,7 @@ a.ui-button:active,
       .experience_list:after {
         clear: both; } }
   .experience_item {
-    margin: 0 0 57px;
+    margin: 0 0 27px;
     text-align: center; }
     @media all and (min-width: 600px) {
       .experience_item {
@@ -1353,9 +1355,11 @@ a.ui-button:active,
         position: relative; } }
     @media all and (min-width: 1000px) {
       .experience_item {
-        margin: 0 0 114px;
+        padding: 57px 0;
+        margin: 0;
         float: left;
-        width: 33.33%; } }
+        width: 33.33%;
+        cursor: pointer; } }
   .experience_wrap {
     width: 100%;
     max-width: 265px;
@@ -1378,10 +1382,14 @@ a.ui-button:active,
 
 .calculator {
   background-color: rgba(45, 45, 45, 0.85);
-  border: 1px solid #747474;
   margin: 26px 0 0;
-  padding: 0 0 15px;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  border: 1px solid #747474;
   position: relative;
+  -webkit-transition: opacity 0.2s 0.1s, height 0.2s;
+  transition: opacity 0.2s 0.1s, height 0.2s;
   background-color: #2d2d2d; }
   .calculator:before {
     content: "";
@@ -1407,6 +1415,10 @@ a.ui-button:active,
     margin-left: -15px;
     border-bottom-color: #2a2a2b;
     border-width: 0 10px 13px 10px; }
+  .experience_item:hover .calculator {
+    height: 333px;
+    opacity: 1;
+    overflow: visible; }
   @media all and (min-width: 600px) {
     .calculator {
       position: absolute;
@@ -1419,8 +1431,19 @@ a.ui-button:active,
       top: auto;
       bottom: 100%;
       width: 500px;
+      height: auto;
       border: 2px solid #747474;
-      margin: 0 0 55px; }
+      margin: 0 0 -2px;
+      padding: 0 0 15px;
+      display: block;
+      visibility: hidden;
+      opacity: 0; }
+      .calculator__show {
+        visibility: visible;
+        opacity: 1; }
+      .experience_item:hover .calculator {
+        height: auto;
+        border: 2px solid #747474; }
       .calculator:before {
         top: auto;
         bottom: -36px;
@@ -1455,7 +1478,7 @@ a.ui-button:active,
           left: auto;
           right: 45px; }
       .experience_item:nth-child(1) .calculator {
-        margin: 47px 0 0;
+        margin: -10px 0 0;
         top: 100%;
         bottom: auto;
         left: 22px; }
@@ -1472,7 +1495,7 @@ a.ui-button:active,
           left: 45px;
           border-width: 0 24px 34px 24px; }
       .experience_item:nth-child(2) .calculator {
-        margin: 47px 0 0;
+        margin: -10px 0 0;
         top: 100%;
         bottom: auto;
         left: -120px; }
@@ -1485,7 +1508,7 @@ a.ui-button:active,
           top: -34px;
           border-width: 0 24px 34px 24px; }
       .experience_item:nth-child(3) .calculator {
-        margin: 47px 0 0;
+        margin: -10px 0 0;
         top: 100%;
         bottom: auto;
         right: 22px;
@@ -1505,24 +1528,91 @@ a.ui-button:active,
           top: -34px;
           border-width: 0 24px 34px 24px; } }
   .calculator:before {
-    border-width: 0 14px 14px 14px; }
+    border: none; }
   .calculator:after {
-    border-width: 0 13px 13px 13px; }
+    display: none; }
   @media all and (min-width: 1000px) {
-    .calculator:before {
-      top: -36px;
-      left: 50%;
-      margin-left: -26px;
-      border-width: 0 26px 36px 26px; }
-    .calculator:after {
-      top: -33px;
-      left: 50%;
-      margin-left: -24px;
-      border-width: 0 24px 34px 24px; } }
+    .calculator {
+      display: none;
+      visibility: visible; }
+      .calculator__show {
+        display: block; }
+      .calculator:before {
+        content: '';
+        position: absolute;
+        top: auto;
+        bottom: -36px;
+        left: 50%;
+        margin-left: -26px;
+        display: block;
+        width: 51px;
+        height: 36px;
+        background: transparent url("../images/calculator-triangle-ie.png") left -36px no-repeat; }
+      .calculator:after {
+        display: none; }
+      .experience_item:first-child .calculator:before,
+      .experience_item:first-child + * + * + * .calculator:before,
+      .experience_item:first-child + * + * + * + * + * + * .calculator:before,
+      .experience_item:first-child + * + * + * + * + * + * + * + * + * .calculator:before {
+        margin: 0;
+        left: 43px; }
+      .experience_item:first-child + * .calculator,
+      .experience_item:first-child + * + * + * + * .calculator,
+      .experience_item:first-child + * + * + * + * + * + * + * .calculator,
+      .experience_item:first-child + * + * + * + * + * + * + * + * + * + * .calculator {
+        left: -120px; }
+      .experience_item:first-child + * + * .calculator,
+      .experience_item:first-child + * + * + * + * + * .calculator,
+      .experience_item:first-child + * + * + * + * + * + * + * + * .calculator,
+      .experience_item:first-child + * + * + * + * + * + * + * + * + * + * + * .calculator {
+        left: auto;
+        right: 22px; }
+        .experience_item:first-child + * + * .calculator:before,
+        .experience_item:first-child + * + * + * + * + * .calculator:before,
+        .experience_item:first-child + * + * + * + * + * + * + * + * .calculator:before,
+        .experience_item:first-child + * + * + * + * + * + * + * + * + * + * + * .calculator:before {
+          margin: 0;
+          left: auto;
+          right: 43px; }
+      .experience_item:first-child .calculator {
+        margin: -10px 0 0;
+        top: 100%;
+        bottom: auto;
+        left: 22px; }
+        .experience_item:first-child .calculator:before {
+          bottom: auto;
+          top: -36px;
+          left: 43px;
+          background-position: 0 0; }
+      .experience_item:first-child + * .calculator {
+        margin: -10px 0 0;
+        top: 100%;
+        bottom: auto;
+        left: -120px; }
+        .experience_item:first-child + * .calculator:before {
+          margin: 0;
+          bottom: auto;
+          top: -36px;
+          background-position: 0 0; }
+      .experience_item:first-child + * + * .calculator {
+        margin: -10px 0 0;
+        top: 100%;
+        bottom: auto;
+        right: 22px;
+        left: auto; }
+        .experience_item:first-child + * + * .calculator:before {
+          left: auto;
+          right: 43px;
+          bottom: auto;
+          top: -36px;
+          background-position: 0 0; } }
 
 .components {
   text-align: left;
   margin: 0 0 26px; }
+  @media all and (min-width: 1000px) {
+    .components {
+      margin: 0; } }
   .components_title {
     padding: 15px 0 12px 12px;
     font-weight: bold;
@@ -1530,6 +1620,7 @@ a.ui-button:active,
     font-size: 19px; }
     @media all and (min-width: 1000px) {
       .components_title {
+        padding: 21px 0 12px 22px;
         font-size: 21px; } }
   .components_list {
     *zoom: 1;
@@ -1545,7 +1636,8 @@ a.ui-button:active,
       clear: both; }
     @media all and (min-width: 1000px) {
       .components_list {
-        border: none; } }
+        border: none;
+        margin: 0 0 0 23px; } }
   .components_item {
     float: left;
     width: 33.33%;
@@ -1556,17 +1648,27 @@ a.ui-button:active,
       border: none; }
     @media all and (min-width: 1000px) {
       .components_item {
+        padding: 0;
+        margin: 0 0 14px;
+        height: 20px;
         border: none;
         float: none;
         width: auto;
-        text-align: left; } }
+        text-align: left; }
+        .components_item:after {
+          content: "";
+          display: inline-block;
+          vertical-align: middle;
+          height: 100%; } }
   .components_radio:not(checked) {
     position: absolute;
     opacity: 0; }
     @media all and (min-width: 1000px) {
       .components_radio:not(checked) {
+        margin: 0;
         position: static;
-        opacity: 1; } }
+        opacity: 1;
+        vertical-align: middle; } }
   .components_label {
     display: inline-block;
     padding: 30px 0 0;
@@ -1579,7 +1681,8 @@ a.ui-button:active,
     padding: 0; }
     @media all and (min-width: 1000px) {
       .components_label {
-        padding: 0; } }
+        padding: 0;
+        vertical-align: middle; } }
     .components_radio:not(checked) + .components_label:before {
       content: '';
       position: absolute;
@@ -1620,6 +1723,9 @@ a.ui-button:active,
 .quantity {
   text-align: left;
   margin: 0 0 24px; }
+  @media all and (min-width: 1000px) {
+    .quantity {
+      margin: 0 0 13px; } }
   .quantity_title {
     padding: 15px 0 13px 12px;
     font-weight: bold;
@@ -1627,6 +1733,7 @@ a.ui-button:active,
     font-size: 19px; }
     @media all and (min-width: 1000px) {
       .quantity_title {
+        padding: 13px 0 16px 22px;
         font-size: 21px; } }
   .quantity_wrap {
     *zoom: 1;
@@ -1638,6 +1745,9 @@ a.ui-button:active,
       overflow: hidden; }
     .quantity_wrap:after {
       clear: both; }
+    @media all and (min-width: 1000px) {
+      .quantity_wrap {
+        padding: 0 26px 0 22px; } }
   .quantity_left {
     max-width: 260px;
     overflow: hidden;
@@ -1647,6 +1757,9 @@ a.ui-button:active,
     background: none;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-bac.png', sizingMethod='scale');
     -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-bac.png', sizingMethod='scale')"; }
+    @media all and (min-width: 1000px) {
+      .quantity_left {
+        padding: 0 22px 0 20px; } }
   .quantity_right {
     float: right;
     width: 79px;
@@ -1655,6 +1768,9 @@ a.ui-button:active,
     border: none; }
   .quantity_slider.ui-slider-horizontal {
     height: 34px; }
+    @media all and (min-width: 1000px) {
+      .quantity_slider.ui-slider-horizontal {
+        height: 42px; } }
   .quantity_slider.ui-widget-content {
     background: none; }
   .quantity_slider .ui-slider-handle {
@@ -1670,10 +1786,16 @@ a.ui-button:active,
     -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-handle.png', sizingMethod='scale')"; }
     .quantity_slider .ui-slider-handle:focus {
       outline: none; }
+    @media all and (min-width: 1000px) {
+      .quantity_slider .ui-slider-handle {
+        top: 7px; } }
   .quantity_slider.ui-slider-horizontal .ui-slider-range {
     top: 16px;
     height: 3px;
     background-color: #ffd703; }
+    @media all and (min-width: 1000px) {
+      .quantity_slider.ui-slider-horizontal .ui-slider-range {
+        top: 20px; } }
   .quantity_text {
     display: block;
     height: 34px;
@@ -1685,14 +1807,22 @@ a.ui-button:active,
     color: #a29b70;
     font-size: 20px;
     font-weight: bold;
-    line-height: 42px;
+    line-height: 34px;
     text-align: right;
     background: none;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-text.png', sizingMethod='scale');
     -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-text.png', sizingMethod='scale')"; }
+    .quantity_text::-webkit-inner-spin-button, .quantity_text::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    @media all and (min-width: 1000px) {
+      .quantity_text {
+        height: 42px;
+        line-height: 42px; } }
 
 .total {
-  text-align: left; }
+  text-align: left;
+  padding: 0 0 15px; }
   .total_title {
     padding: 15px 0 9px 12px;
     font-weight: bold;
@@ -1700,6 +1830,7 @@ a.ui-button:active,
     font-size: 19px; }
     @media all and (min-width: 1000px) {
       .total_title {
+        padding: 21px 0 19px 12px;
         font-size: 21px; } }
   .total_text {
     display: block;
@@ -1719,10 +1850,18 @@ a.ui-button:active,
       background: transparent url("../images/total-star.png") left top no-repeat;
       background-size: contain;
       background-image: url("../images/total-star-small.png"); }
+      @media all and (min-width: 1000px) {
+        .total_text:before {
+          top: 2px;
+          left: 6px; } }
+    @media all and (min-width: 1000px) {
+      .total_text {
+        padding: 6px 0 0 89px;
+        font-size: 42px; } }
   @media all and (min-width: 1000px) {
     .total {
       position: absolute;
-      right: 0;
+      right: 35px;
       top: 0; } }
 
 .footer {

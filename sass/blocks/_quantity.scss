@@ -1,18 +1,25 @@
 .quantity{
 	text-align: left;
 	margin: 0 0 24px;
+	@include break1{
+		margin: 0 0 13px;
+	}
 	&_title{
 		padding: 15px 0 13px 12px;
 		font-weight: bold;
 		color: #a29b70;
 		font-size: 19px;
 		@include break1{
+			padding: 13px 0 16px 22px;
 			font-size: 21px;
 		}
 	}
 	&_wrap{
 		@include clearfix;
 		padding: 0 12px;
+		@include break1{
+			padding: 0 26px 0 22px;
+		}
 	}	
 	&_left{
 		max-width: 260px;
@@ -20,6 +27,9 @@
 		background: transparent url('../images/quantity-bac.png') left top no-repeat;
 		background-size: 100% 100%;
 		padding: 0 20px 0 15px;
+		@include break1{
+			padding: 0 22px 0 20px;
+		}
 		@include old-ie{
 			background: none; 
 			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-bac.png', sizingMethod='scale');
@@ -37,6 +47,9 @@
 		}
 		&.ui-slider-horizontal{
 			height: 34px;
+			@include break1{
+				height: 42px;
+			}
 		}
 		&.ui-widget-content{
 			background: none;
@@ -52,6 +65,9 @@
 			&:focus{
 				outline: none;
 			}
+			@include break1{
+				top: 7px;
+			}
 			@include old-ie{
 				background: none; 
 				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-handle.png', sizingMethod='scale');
@@ -62,6 +78,9 @@
 			top: 16px;
 			height: 3px;
 			background-color: #ffd703;
+			@include break1{
+				top: 20px;
+			}
 		}
 	}
 	&_text{
@@ -75,8 +94,17 @@
 		color: #a29b70;
 		font-size: 20px;
 		font-weight: bold;
-		line-height: 42px;
+		line-height: 34px;
 		text-align: right;
+		&::-webkit-inner-spin-button, 
+		&::-webkit-outer-spin-button { 
+		  -webkit-appearance: none; 
+		  margin: 0; 
+		}
+		@include break1{
+			height: 42px;
+			line-height: 42px;
+		}
 		@include old-ie{
 			background: none; 
 			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-text.png', sizingMethod='scale');

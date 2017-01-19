@@ -1,12 +1,16 @@
 .components{
 	text-align: left;
 	margin: 0 0 26px;
+	@include break1{
+		margin: 0;
+	}
 	&_title{
 		padding: 15px 0 12px 12px;
 		font-weight: bold;
 		color: #a29b70;
 		font-size: 19px;
 		@include break1{
+			padding: 21px 0 12px 22px;
 			font-size: 21px;
 		}
 	}
@@ -17,6 +21,7 @@
 		border-bottom: 1px solid #a3a4a6;
 		@include break1{
 			border: none;
+			margin: 0 0 0 23px;
 		}
 	}
 	&_item{
@@ -29,10 +34,20 @@
 			border: none;
 		}
 		@include break1{
+			padding: 0;
+			margin: 0 0 14px;
+			height: 20px;
 			border: none;
 			float: none;
 			width: auto;
 			text-align: left;
+			//vertical align
+			&:after{
+				content: "";
+				display: inline-block;
+			  vertical-align: middle;
+			  height: 100%;
+			}
 		}
 	}
 
@@ -42,8 +57,10 @@
 			position: absolute;
   		opacity: 0;
   		@include break1{
+  			margin: 0;
   			position: static;
   			opacity: 1;
+  			vertical-align: middle;
   		}
 		}
 	}
@@ -57,6 +74,7 @@
 		transition: color 0.2s;
 		@include break1{
 			padding: 0;
+			vertical-align: middle;
 		}
 		.components_radio:not(checked) + &:before{
 			content: '';
