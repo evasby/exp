@@ -1,6 +1,7 @@
 .quantity{
-	text-align: left;
 	margin: 0 0 24px;
+	text-align: left;
+	//desktop
 	@include break1{
 		margin: 0 0 13px;
 	}
@@ -9,44 +10,51 @@
 		font-weight: bold;
 		color: #a29b70;
 		font-size: 19px;
+		//desktop
 		@include break1{
-			padding: 13px 0 16px 22px;
+			padding: 13px 0 15px 22px;
 			font-size: 21px;
 		}
 	}
 	&_wrap{
 		@include clearfix;
 		padding: 0 12px;
+		//desktop
 		@include break1{
 			padding: 0 26px 0 22px;
 		}
 	}	
 	&_left{
+		padding: 0 20px 0 17px;
 		max-width: 260px;
 		overflow: hidden;
 		background: transparent url('../images/quantity-bac.png') left top no-repeat;
 		background-size: 100% 100%;
-		padding: 0 20px 0 15px;
+		//desktop
 		@include break1{
 			padding: 0 22px 0 20px;
 		}
 		@include old-ie{
+			max-width: 220px;
+			//background-size emulation
 			background: none; 
 			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-bac.png', sizingMethod='scale');
 			-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-bac.png', sizingMethod='scale')";
 		}
 	}
 	&_right{
+		margin: 0 0 0 14px;
 		float: right;
 		width: 79px;
-		margin: 0 0 0 14px;
 	}
 	&_slider{
+		//UI slider styling
 		&.ui-widget.ui-widget-content{
 			border: none;
 		}
 		&.ui-slider-horizontal{
 			height: 34px;
+			//desktop
 			@include break1{
 				height: 42px;
 			}
@@ -55,29 +63,32 @@
 			background: none;
 		}
 		.ui-slider-handle{
-			cursor: pointer;
-			top: 3px;
 			width: 27px;
 			height: 27px;
+			top: 3px;
 			border: none;
 			background: transparent url('../images/quantity-handle.png') left top no-repeat;
 			background-size: contain;
+			cursor: pointer;
 			&:focus{
 				outline: none;
 			}
+			//desktop
 			@include break1{
 				top: 7px;
 			}
 			@include old-ie{
+				//background-size emulation
 				background: none; 
 				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-handle.png', sizingMethod='scale');
 				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-handle.png', sizingMethod='scale')";
 			}
 		}
 		&.ui-slider-horizontal .ui-slider-range{
-			top: 16px;
 			height: 3px;
+			top: 16px;
 			background-color: #ffd703;
+			//desktop
 			@include break1{
 				top: 20px;
 			}
@@ -85,9 +96,9 @@
 	}
 	&_text{
 		display: block;
+		padding: 0 15px 0 0;
 		height: 34px;
 		width: 100%;
-		padding: 0 15px 0 0;
 		border: none;
 		background: transparent url('../images/quantity-text.png') left top no-repeat;
 		background-size: 100% 100%;
@@ -96,16 +107,21 @@
 		font-weight: bold;
 		line-height: 34px;
 		text-align: right;
+		//turn off number input spinners
 		&::-webkit-inner-spin-button, 
 		&::-webkit-outer-spin-button { 
 		  -webkit-appearance: none; 
 		  margin: 0; 
 		}
+    -moz-appearance: textfield;
+		//desktop
 		@include break1{
 			height: 42px;
 			line-height: 42px;
 		}
 		@include old-ie{
+			display: inline;
+			//background-size emulation
 			background: none; 
 			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-text.png', sizingMethod='scale');
 			-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/quantity-text.png', sizingMethod='scale')";

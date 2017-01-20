@@ -1,19 +1,21 @@
 .header{
-	height: 60px;
-	background-color: #0e0e0f;
 	padding: 3px 0 0;
+	height: 60px;
 	position: relative;
 	z-index: 2;
+	background-color: #0e0e0f;
+	//desktop
 	@include break1{
-		height: auto;
 		padding: 0;
+		height: auto;
 		background-color: rgba(37, 37, 37, .75);
 	}
 	&_inner{
 		position: relative;
+		//desktop
 		@include break1{
-			max-width: 1024px;
 			margin: 0 auto;
+			max-width: 1024px;
 			@include clearfix;
 		}
 	}

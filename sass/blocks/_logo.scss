@@ -5,6 +5,7 @@
 	margin: 0 0 0 5px;
 	background: transparent url('../images/site-logo.png') 50% 50% no-repeat;
 	background-size: 100%;
+	//anchor hide
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
@@ -13,6 +14,7 @@
 		margin: 5px 0 0 5px;
 	}
 	@include old-ie{
+		//background-size emulation
 		background: none; 
 		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/site-logo.png', sizingMethod='scale');
 		-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/site-logo.png', sizingMethod='scale')";

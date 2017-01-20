@@ -2,23 +2,27 @@
 	padding: 12px 0 45px;
 	background-color: #0e0e0f;
 	text-align: center;
+	//desktop
 	@include break1{
 		padding: 0;
 	}
 	&_logo{
 		display: block;
+		margin: 0 auto;
 		width: 130px;
 		height: 70px;
-		margin: 0 auto;
 		background: transparent url('../images/footer-logo.png') 50% 50% no-repeat;
 		background-size: 100%;
+		//anchor hide
 		text-indent: 100%;
 		white-space: nowrap;
 		overflow: hidden;
+		//desktop
 		@include break1{
 			display: none;
 		}
 		@include old-ie{
+			//background-size emulation
 			background: none; 
 			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/footer-logo.png', sizingMethod='scale');
 			-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/footer-logo.png', sizingMethod='scale')";
@@ -30,6 +34,7 @@
 	  font-size: 16px;  
 	  line-height: 25px;
 	  color: #787878;
+	  //desktop
 	  @include break1{
 			display: none;
 		}

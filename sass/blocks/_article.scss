@@ -1,5 +1,6 @@
 .article{
 	margin: 8px 0 0;
+	//desktop
 	@include break1{
 		margin: 0;
 		padding: 0 80px 0 0;
@@ -9,9 +10,11 @@
 		margin: 0 0 15px;
 		padding: 0 20px;
 	  font-size: 23px;
+	  //tablet
 	  @include break2{
 	  	font-size: 26px;
 	  }
+	  //desktop
 	  @include break1{
 	  	margin: 0 0 42px;
 	  	padding: 0;
@@ -23,10 +26,12 @@
 		padding: 0 20px;
 	  font-size: 12px;
 	  line-height: 14px;
+	  //tablet
 	  @include break2{
 	  	font-size: 15px;
 	  	line-height: 18px;
 	  }
+	  //desktop
 	  @include break1{
 	  	padding: 0;
 	  }

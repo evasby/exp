@@ -1,14 +1,17 @@
 .experience{
 	padding: 20px 0;
+	//tablet
 	@include break2{
-		min-height: 570px;
 		padding: 20px;
+		min-height: 570px;
 	}
+	//desktop
 	@include break1{
 		padding: 0 10px 95px;
 		max-width: 700px;
 	}
 	&_list{	
+		//tablet
 		@include break2{
 			@include clearfix;
 			margin: -22px 0 0;
@@ -17,11 +20,13 @@
 	&_item{
 		margin: 0 0 27px;
 		text-align: center;
+		//tablet
 		@include break2{
 			float: left;
 			width: 50%;
 			position: relative;
 		}
+		//desktop
 		@include break1{
 			padding: 57px 0;
 			margin: 0;
@@ -31,13 +36,14 @@
 		}
 	}
 	&_wrap{
-		width: 100%;
-		max-width: 265px;
 		margin: 0 auto;
 		padding: 0 20px;
+		width: 100%;
+		max-width: 265px;
+		//desktop
 		@include break1{
-			padding: 0;
 			margin: 0 auto 9px auto;
+			padding: 0;	
 		}
 	}
 	&_image{
@@ -48,6 +54,7 @@
 	&_name{
 		color: #b9b9b9;
 		font-size: 21px;
+		//desktop
 		@include break1{
 			font-size: 21px;
 		}

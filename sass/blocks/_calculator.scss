@@ -8,29 +8,30 @@
   position: relative;
   transition: opacity 0.2s 0.1s,
               height 0.2s;
+  //triangle with borders              
 	&:before{
 		content: "";
     position: absolute;
+    top: -14px;
+    left: 50%;
+    margin-left: -16px;
     width: 0;
     height: 0;
     border-style: solid;
     border-color: transparent;
-    top: -14px;
-    left: 50%;
-    margin-left: -16px;
     border-bottom-color: #747474;
     border-width: 0 11px 14px 11px;
 	}
 	&:after{
 		content: "";
     position: absolute;
+    top: -13px;
+    left: 50%;
+    margin-left: -15px;
     width: 0;
     height: 0;
     border-style: solid;
     border-color: transparent;
-    top: -13px;
-    left: 50%;
-    margin-left: -15px;
     border-bottom-color: #2a2a2b;
     border-width: 0 10px 13px 10px;
 	}
@@ -40,7 +41,6 @@
     overflow: visible;
   }
   
-
   //tablet
   @include break2{
     position: absolute;
@@ -50,41 +50,41 @@
     width: 100%;
   }
 
-
   //desktop
   @include break1{
+    display: block;
+    margin: 0 0 -2px;
+    padding: 0 0 15px;
     top: auto;
     bottom: 100%;
     width: 500px;
     height: auto;
     border: 2px solid #747474;
-    margin: 0 0 -2px;
-    padding: 0 0 15px;
-    display: block;
     visibility: hidden;
     opacity: 0;
     &__show{
       visibility: visible;
       opacity: 1;
     }
+    //hover cancel
     .experience_item:hover &{
       height: auto;
       border: 2px solid #747474;
     }
     //triangles location
     &:before{
+      margin-left: -26px;
       top: auto;
       bottom: -36px;
       left: 50%;
-      margin-left: -26px;
       border-top-color: #747474;
       border-width: 36px 26px 0 26px;
     }
     &:after{
+      margin-left: -24px;
       top: auto;
       bottom: -33px;
-      left: 50%;
-      margin-left: -24px;
+      left: 50%; 
       border-top-color: #2a2a2b;
       border-width: 34px 24px 0 24px;
     }
@@ -102,17 +102,17 @@
       left: -120px;
     }
     .experience_item:nth-child(3n) &{
-      left: auto;
       right: 22px;
+      left: auto;
       &:before{
-        margin: 0;
-        left: auto;
+        margin: 0;  
         right: 43px;
+        left: auto;
       }
       &:after{
-        margin: 0;
-        left: auto;
+        margin: 0;   
         right: 45px;
+        left: auto;
       }
     }
 
@@ -123,16 +123,16 @@
       bottom: auto;
       left: 22px;
       &:before{
-        margin: 0;
-        bottom: auto;
+        margin: 0; 
         top: -36px;
+        bottom: auto;
         left: 43px;
         border-width: 0 26px 36px 26px;
       }
       &:after{
         margin: 0;
-        bottom: auto;
         top: -33px;
+        bottom: auto;
         left: 45px;
         border-width: 0 24px 34px 24px;
       }
@@ -143,36 +143,36 @@
       bottom: auto;
       left: -120px;
       &:before{
-        bottom: auto;
         top: -36px;
+        bottom: auto; 
         border-width: 0 26px 36px 26px;
       }
       &:after{
-        bottom: auto;
         top: -34px;
+        bottom: auto; 
         border-width: 0 24px 34px 24px;
       }
     }
     .experience_item:nth-child(3) &{
       margin: -10px 0 0;
-      top: 100%;
-      bottom: auto;
+      top: 100%;  
       right: 22px;
+      bottom: auto;
       left: auto;
       &:before{
         margin: 0;
-        left: auto;
+        top: -36px;
         right: 43px;
         bottom: auto;
-        top: -36px;
+        left: auto;
         border-width: 0 26px 36px 26px;
       }
       &:after{
-        margin: 0;
-        left: auto;
+        margin: 0;   
+        top: -34px;
         right: 45px;
         bottom: auto;
-        top: -34px;
+        left: auto;
         border-width: 0 24px 34px 24px;
       }
     }
@@ -183,11 +183,22 @@
   //ie8
   @include old-ie{
     background-color: #2d2d2d;
+    border: none;
+    //cancel css triangle
     &:before{
       border: none;
+      display: block;
+      width: 17px;
+      height: 11px;
+      position: absolute;
+      top: -11px;
+      background: transparent url('../images/calculator-triangle-small-ie.png') left top no-repeat;
     }
     &:after{
       display: none;
+    }
+    .experience_item:hover &{
+      border: 1px solid #747474;
     }
     @include break1{
       display: none;
@@ -197,18 +208,13 @@
       }
       &:before{
         content: '';
-        position: absolute;
-        top: auto;
-        bottom: -36px;
-        left: 50%;
         margin-left: -26px;
-        display: block;
         width: 51px;
         height: 36px;
+        top: auto;
+        bottom: -36px;
+        left: 50%;        
         background: transparent url('../images/calculator-triangle-ie.png') left -36px no-repeat;
-      }
-      &:after{
-        display: none;
       }
       //for 12 items
       .experience_item:first-child &,
@@ -230,12 +236,12 @@
       .experience_item:first-child + * + * + * + * + * &,
       .experience_item:first-child + * + * + * + * + * + * + * + * &,
       .experience_item:first-child + * + * + * + * + * + * + * + * + * + * + * &{
-        left: auto;
         right: 22px;
+        left: auto;  
         &:before{
           margin: 0;
-          left: auto;
           right: 43px;
+          left: auto;      
         }
       }
       //first 3 items
@@ -245,8 +251,8 @@
         bottom: auto;
         left: 22px;
         &:before{
-          bottom: auto;
           top: -36px;
+          bottom: auto;
           left: 43px;
           background-position: 0 0;
         }
@@ -258,8 +264,8 @@
         left: -120px;
         &:before{
           margin: 0;
-          bottom: auto;
           top: -36px;
+          bottom: auto; 
           background-position: 0 0;
         }
       }
@@ -267,22 +273,17 @@
         margin: -10px 0 0;
         top: 100%;
         bottom: auto;
-        right: 22px;
         left: auto;
+        right: 22px;
         &:before{
-          left: auto;
-          right: 43px;
-          bottom: auto;
           top: -36px;
+          bottom: auto;
+          right: 43px;
+          left: auto;    
           background-position: 0 0;
         }
       }
     }
   }
   //--ie8
-
-
-
-
-  
 }

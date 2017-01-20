@@ -2,21 +2,24 @@
 	position: absolute;
 	top: 0;
 	right: 0;
+	//desktop
 	@include break1{
 		position: static;
 		overflow: hidden;
 	}
 	&_nav{
 		display: none;
-		width: 100%;
 		padding: 4px 10px;
+		width: 100%;
 		position: fixed;
 		top: 60px;
 		right: 0;
 		background-color: #2a2a2a;
+		//show menu
 		&__on{
 			display: block;
 		}
+		//desktop
 		@include break1{
     	display: block;
     	padding: 0;
@@ -26,22 +29,23 @@
 	}
 	&_link{
 		display: block;
-		border-top: 1px solid #313131;
 		padding: 7px 0 7px 10px;
+		border-top: 1px solid #313131;
 		@include link(#c6c6c6, #c6c6c6);
 		text-decoration: none;
 		text-transform: uppercase;
-		font-size: 18px;
+		font-size: 14px;
 		&__active{
 			@include link(#f9a936, #f9a936);
 		}
 		&:first-child{
 			border: none;
 		}
+		//desktop
 		@include break1{
 			display: inline-block;
-			height: 66px;
 			padding: 25px 30px 0;
+			height: 66px;
     	border: none;
  	  	font-size: 14px;
  	  	@include link(#c6c6c6, #f9a936);
@@ -53,9 +57,9 @@
 	}
 	&_toggle{
 		display: block;
+		padding: 26px 0 0 20px;
 		height: 60px;
 		width: 70px;
-		padding: 26px 0 0 20px;
 		position: absolute;
     top: -3px;
     right: 0;
@@ -73,8 +77,8 @@
     display: block;
     width: 30px;
     height: 5px;
-    background-color: #fff;
     position: relative;
+    background-color: #fff;
     .top-menu_toggle__on &{
     	background-color: transparent;
     	@include old-ie{
@@ -83,12 +87,12 @@
     }
     &:before{
 	    content: "";
+	    height: 5px;
+	    width: 100%;
 	    position: absolute;
 	    top: -10px;
 	    left: 0;
 	    background-color: #fff;
-	    height: 5px;
-	    width: 100%;
 	    transition: transform .3s;
 	    .top-menu_toggle__on &{
 	    	transform: translate(0, 10px) rotate(45deg);
@@ -96,12 +100,12 @@
 	  }
 	  &:after{
 	    content: "";
+	    height: 5px;
+	    width: 100%;
 	    position: absolute;
 	    top: 10px;
 	    left: 0;
 	    background-color: #fff;
-	    height: 5px;
-	    width: 100%;
 	    transition: transform .3s;
 	    .top-menu_toggle__on &{
 	    	transform: translate(0, -10px) rotate(-45deg) ;
