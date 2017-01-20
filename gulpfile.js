@@ -86,7 +86,7 @@ gulp.task('build', function () {
     return gulp.src('app/*.html')
       .pipe(useref())
       //.pipe(gulpif('*.js', uglify()))
-      //.pipe(gulpif('*.css', minifyCss({compatibility: 'ie7'})))
+      .pipe(gulpif('*.css', minifyCss({compatibility: 'ie7'})))
       .pipe(gulp.dest('dist'));
 });
 

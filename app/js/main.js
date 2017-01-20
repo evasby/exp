@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   //init
   var calcRateElite = 1.1,
       calcRatePremium = 1.2,
@@ -83,14 +84,7 @@ $(document).ready(function(){
   });
 
   //quanity input change
-  $('.quantity_text').keyup(function(e) {
-    if (parseInt($(this).val()) > maxInput) $(this).val(maxInput)
-    if (parseInt($(this).val()) < 0) $(this).val(0)
-    $(this).closest('.quantity_wrap').find('.quantity_slider').slider('value', $(this).val());
-    calculate($(this).closest('.calculator'));
-  });
-  //for ie8
-  $('.quantity_text').change(function(e) {
+  $('.quantity_text').on("propertychange input",function(ev){
     if (parseInt($(this).val()) > maxInput) $(this).val(maxInput)
     if (parseInt($(this).val()) < 0) $(this).val(0)
     $(this).closest('.quantity_wrap').find('.quantity_slider').slider('value', $(this).val());
